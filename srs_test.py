@@ -1,4 +1,8 @@
-from exturtle import *          # Import all the exturtle functions 
+# Matthew Shaw
+# A Gentic algorithm that recursively draws a fractal
+# 
+
+from exturtle import *          # Import all the exturtle functions
 t = Turtle()
 hideturtle(t)
 t.speed(0)
@@ -8,7 +12,7 @@ step = 2
 rules = {'A':'AB', 'B' : 'A'}
 def srs_print(S,n,rules):
     """Re-write an axiom according to given rules"""
-    
+
     for i in range (n):
         newaxiom = ''
         for i in S:
@@ -19,26 +23,26 @@ def srs_print(S,n,rules):
             newaxiom+= i
              #append newaxiom according to the rules of rewriting the string
         S = newaxiom
-    
-       
+
+
     return S            #(above line can crash computer with 30 re-writes)
 
 
 
 def follow(S, n, t, rules, step, angle):
     """Turn string into turtle movement"""
-    
-    for letter in S:                
+
+    for letter in S:
         if letter == 'E' :
             forward(t, step)
         if letter == 'F':
-            forward(t,step)             
+            forward(t,step)
         if letter == 'L':
             left(t, angle)
         if letter == 'R':
             right(t, angle)
 
-            
+
 print(srs_print(S,n,rules))
 
 
